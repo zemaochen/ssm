@@ -19,6 +19,6 @@
     </environments>
     <mappers>
         <!--ÅäÖÃÓ³ÉäÆ÷  -->
-        <mapper resource="UserMapper.xml" />
+        <mapper resource="Mapper/UserMapper.xml" />
     </mappers>
 </configuration>
