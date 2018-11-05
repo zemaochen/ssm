@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gbk"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/util
+               http://www.springframework.org/schema/util/spring-util.xsd">
+
+ <bean id="User1" class="cn.edu.cdu.chen.Model.User">
+     <property name="userid" value="5"></property>
+     <property name="username" value="5号"></property>
+ </bean>
+    <bean id="User2" class="cn.edu.cdu.chen.Model.User" c:_0="6" c:_1="6号"/>
+    <bean id="User3" class="cn.edu.cdu.chen.Model.User" p:userid="7" p:username="7号"/>
+    <util:list id="list">
+        <ref bean="User3"/>
+        <ref bean="User2"/>
+        <ref bean="User1"/>
+    </util:list>
+    <bean id="UsersList1" class="cn.edu.cdu.chen.Utils.UserList" p:users-ref="list"/>
+</beans>

@@ -1,12 +1,14 @@
-package cn.edu.cdu.chen.Model;
+package cn.edu.cdu.chen.Beans.Pojo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+@Component(value = "user")
 public class User {
+    @Value("1")
     private Integer userid;
-
+    @Value("1号")
     private String username;
-
     public User(Integer userid, String username) {
         this.userid = userid;
         this.username = username;
