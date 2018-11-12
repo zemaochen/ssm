@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gbk"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               ">
+ <bean id="User" class="cn.edu.cdu.chen.Model.User">
+    <property name="username" value="һ"/>
+     <property name="userid" value="1"/>
+ </bean>
+    <bean id="UserService" class="cn.edu.cdu.chen.ServiceImpl.UserServiceImpl">
+        <property name="user" ref="User"/>
+    </bean>
+    <!--1.无参构造Bean1-->
+    <bean id="Bean1" class="cn.edu.cdu.chen.Model.Bean1"></bean>
+    <!--2.静态工厂获取Bean2-->
+    <bean id="Bean2" class="cn.edu.cdu.chen.Model.Bean2Factory" factory-method="initBean2"/>
+    <!--3.实列化工厂获取Bean3对象：必须先实列化工厂，然后配置方法-->
+    <bean id="Bean3factory" class="cn.edu.cdu.chen.Model.Bean3factory"/>
+    <bean id="Bean3" factory-bean="Bean3factory" factory-method="initBean3"/>
+    <!--4.FactoryBean方式获取Bean：spring自动调用getObject方法获取Bean-->
+    <bean id="Bean4" class="cn.edu.cdu.chen.Model.Bean4FactoryBean"/>
+</beans>
